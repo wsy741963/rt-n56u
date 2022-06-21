@@ -1,5 +1,4 @@
 name: Build MI-MINI
-
 on: 
   release:
     types: [published]
