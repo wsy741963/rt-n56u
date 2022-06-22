@@ -56,10 +56,10 @@
 * 安装依赖包
 
 ```shell
-# Debian/Ubuntu
+# Debian/Ubuntu(22.04)
 sudo apt update
 sudo apt install unzip libtool-bin curl cmake gperf gawk flex bison nano xxd \
-	fakeroot kmod cpio git python-docutils gettext automake autopoint \
+	fakeroot kmod cpio git python-is-python3 python3-docutils gettext automake autopoint \
 	texinfo build-essential help2man pkg-config zlib1g-dev libgmp3-dev \
 	libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget libc-dev-bin
 
@@ -101,7 +101,7 @@ sudo yum install ncurses-* flex byacc bison zlib-* gmp-* mpfr-* gettext \
 * 克隆源码
 
 ```shell
-git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
+git clone --depth=1 https://github.com/wsy741963/rt-n56u.git /opt/rt-n56u
 ```
 
 * 准备工具链
@@ -121,7 +121,7 @@ sh dl_toolchain.sh
 * (可选) 修改机型配置文件
 
 ```shell
-nano /opt/rt-n56u/trunk/configs/templates/PSG1218.config
+nano /opt/rt-n56u/trunk/configs/templates/R2100.config
 ```
 
 * 清理代码树并开始编译
@@ -129,7 +129,7 @@ nano /opt/rt-n56u/trunk/configs/templates/PSG1218.config
 ```shell
 cd /opt/rt-n56u/trunk
 ./clear_tree
-fakeroot ./build_firmware_modify PSG1218
+fakeroot ./build_firmware_modify R2100
 # 脚本第一个参数为路由型号，在trunk/configs/templates/中
 # 编译好的固件在trunk/images里
 ```
